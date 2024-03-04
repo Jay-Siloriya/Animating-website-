@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:#fff;
+}
+*::selection{
+    color: black;
+    background-color: white;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.nav{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 99;
+    padding: 0 150px;
+    gap: 40px;
+    position: fixed;
+ 
+}
+
+.cursor{
+    height: 25px;
+    width: 25px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+
+}
+
+.cursor-blur{
+    height: 250px;
+    width: 250px;
+    background-color: #96c11e71;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+
+}
+.nav img{
+    height: 90px;
+    border-radius: 25px;
+}
+
+.nav h4{
+    font-size: 25px;
+    text-transform: capitalize;
+    font-weight: 700;
+    
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed ;
+    z-index: -1;
+}
+.main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.274);
+}
+
+.page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -3px;
+    left: -3px;
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+
+}
+.page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.page1 h1{
+    font-size: 100px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+
+}
+
+.page1 h4{
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
+
+.page1 p{
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+
+}
+
+.page1 .arrow {
+    height: 250px;
+    width: 250px;
+    background-color: transparent;
+    border: 2px solid #95C11E;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -3%;
+    bottom: -1%;
+    transition: all ease 0.8s; /* Smooth transition for border color */
+}
+
+.arrow i {
+    font-size: 70px;
+    font-weight: 100;
+}
+
+.page1 .arrow:hover {
+      scale: 0.4;
+      background-color: #95C11E;
+}
+
+.page2{
+    min-height: 100vh;
+    width: 100%;
+}
+.scroller{
+   /* background-color: red; */
+   white-space: nowrap;
+   overflow-x: auto ;
+   overflow-y: hidden;
+   position: relative;
+   z-index: 10;
+}
+.scroller::-webkit-scrollbar{
+     display: none;
+}
+.scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+   animation-name: scroll;
+   animation-duration: 20s;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+}
+
+.scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: all linear 0.5s;
+    color: transparent;
+    -webkit-text-stroke: 2px #95C11E;
+}
+
+.scroller h4:hover{
+    color: #95C11E;
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }    
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.page3{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 80;
+    position: relative;
+}
+.about-us img{
+   height: 250px;
+   width: 309px;
+   border-radius: 20px;
+   object-fit: cover;
+   transition: transform 0.9s ease;
+}
+.about-us img:hover {
+    transform: scale(0.1); 
+}
+.about-in img{
+    height: 250px;
+    width: 309px;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.9s ease;
+ }
+.about-in img:hover {
+    transform: scale(0.1); 
+}
+
+ .page3 h3{
+    position: absolute;
+    top: 15%;
+    left: 42%;
+    font-size: 40px;
+}
+.page3 h3:hover{
+    color: #95C11E;
+}
+.page3 p{
+     text-align: center;
+    font-size: 25px;   
+}
+.page3 p:hover {
+   color: #95C11E;
+}
+
+.cards-container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 99;
+}
+
+.card{
+    height: 80%;
+    width: 25%;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: transform 0.9s ease;
+    transition: all ease 0.9s;
+    z-index: 80;
+}
+
+#card1{
+   background-image: url(card1.avif);
+}
+#card2{
+    background-image: url(card2.webp);
+}
+#card3{
+    background-image: url(card3.avif);
+}
+
+.overlays{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding-top: 140px;
+    padding: 40px;
+    opacity: 0;
+    
+    transition: transform 0.9s ease;
+    transition: all ease 0.9s;
+}
+
+.overlays h4{
+  color: black;
+  font-size: 45px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+
+}
+
+.overlays p{
+    color: black;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.card .overlays:hover{
+    opacity: 1;
+}
+
+.card:hover{
+    
+    transform: rotate3d(1,1,0,360deg);
+}
+
+.green{
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background:linear-gradient(to left bottom,#12c043, #95C11E);
+    position: relative;
+    z-index: 90;
+   
+}
+
+.green p{
+
+    /* padding-top: 100px; */
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: black;
+    
+}
+.green p:hover{
+    color: #b9c793;
+}
+.green img{
+    height: 100%;
+   width: 19%;
+    object-fit: cover;
+
+
+}
+
+.page4{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: black;
+    
+}
+.page4>p{
+    font-size: 40px;
+    font-weight: 800;
+    width: 55%;
+    line-height: 50px;
+    text-align: center;
+}
+
+.page4 img{
+    position: absolute;
+    height: 60px;
+
+}
+
+.page4 #colam1{
+    top: 16%;
+    left: 14%;
+}
+.page4 #colam2{
+    right: 15%;
+    bottom: 20%;
+}
+
+.page5{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    position: relative;
+}
+.elem{
+    height: 50%;
+    width: 30%;
+    overflow: hidden;
+    background-color: #95C11E;
+    position: relative;
+    border-radius: 10px;
+    
+   
+}
+.elem h2{
+    height: 100%;
+    width: 100%;
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    color: black;
+    background-color: #95C11E;
+    transition: all ease 0.7s;
+
+  
+}
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    
+}
+
+.elem:hover h2{
+    color: white;
+    background-color: transparent; 
+}
+.elem:hover img{
+    transform: scale(1.1); 
+   
+}
+.page5 h1{
+   font-size: 110px;
+   font-weight: 900;
+   position: absolute;
+   top: -1%;
+   color: black;
+   -webkit-text-stroke: 2px  #fff  ;
+}
+
+.footer {
+    height: 30vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #12c043, #95C11E);
+    display: flex;
+    align-items: center;
+    gap: 190px;
+    padding-left: 20px; 
+}
+
+.footer img {
+    height: 100%;
+    width: auto; /* Maintain aspect ratio */
+}
+
+.p-4 h4, .p-5 h5 {
+    font-size: 30px;
+    text-transform: capitalize;
+
+ 
+}
+.p-6 H6{
+    font-size: 15px;
+    text-transform: capitalize;  
+}
+
+
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 768px) {
+    .nav {
+        padding: 0 20px;
+    }
+    .page1 h1 {
+        font-size: 60px;
+    }
+    .page1 h4 {
+        font-size: 30px;
+    }
+    .page1 p {
+        font-size: 16px;
+    }
+    .arrow i {
+        font-size: 40px;
+    }
+    .scroller h4 {
+        font-size: 70px;
+    }
+    .page3 h3 {
+        font-size: 30px;
+    }
+    .page3 p {
+        font-size: 18px;
+    }
+    .green p {
+        font-size: 20px;
+    }
+    .page4 > p {
+        font-size: 30px;
+        width: 70%;
+    }
+    .page4 img {
+        height: 40px;
+    }
+    .elem h2 {
+        font-size: 25px;
+    }
+    .page5 h1 {
+        font-size: 70px;
+    }
+    .footer {
+        gap: 50px;
+        padding-left: 10px;
+    }
+    .p-4 h4, .p-5 h5 {
+        font-size: 20px;
+    }
+    .p-6 h6 {
+        font-size: 12px;
+    }
+}
+
+/* For screens between 769px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Add your responsive styles here */
+}
+
+/* For screens larger than 1024px */
+@media screen and (min-width: 1025px) {
+    /* Add your responsive styles here */
+}
+
+
+
+
+
+
+
+
+
